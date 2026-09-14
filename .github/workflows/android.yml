@@ -3,7 +3,7 @@ name: Android Auto APK Build
 on:
   push:
     branches:
-      - main # Alur kerja berjalan setiap kali Anda memperbarui kode di branch 'utama'
+      - main
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-            - name: Grant Execute Permission for Gradlew
+    - name: Grant Execute Permission for Gradlew
       run: chmod +x gradlew
 
     - name: Build APK (Debug)
@@ -31,4 +31,3 @@ jobs:
       with:
         name: app-debug-apk
         path: app/build/outputs/apk/debug/app-debug.apk
-
