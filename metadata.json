@@ -1,0 +1,6 @@
+{
+  "name": "TubeAuto AI",
+  "description": "Automated YouTube Shorts and video creator with AI ideation, scriptwriting, asset generation, auto-editing, and direct publishing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
