@@ -25,6 +25,5 @@ jobs:
         gradle wrapper
         chmod +x gradlew
 
-    - name: Build APK without KSP Daemon
-      run: ./gradlew clean assembleDebug --no-daemon -Dorg.gradle.jvmargs="-Xmx2048m -Dksp.incremental=false -Dksp.incremental.log=false"
-
+    - name: Build APK (Bypass KSP Eror & Keystore)
+      run: ./gradlew assembleDebug --no-daemon -Dorg.gradle.welcome-provider.enabled=false -Dksp.incremental=false -Pandroid.injected.signing.config.file=""
