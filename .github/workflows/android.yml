@@ -3,7 +3,7 @@ name: Android Auto APK Build
 on:
   push:
     branches:
-      - utama # Alur kerja berjalan setiap kali Anda memperbarui kode di branch 'utama'
+      - main # Alur kerja berjalan setiap kali Anda memperbarui kode di branch 'utama'
 
 jobs:
   build:
