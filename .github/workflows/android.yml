@@ -18,10 +18,12 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
 
-    - name: Grant Execute Permission for Gradlew
-      run: chmod +x gradlew
+    - name: Automatically Generate Official Gradle Wrapper
+      run: |
+        npm install -g gradle
+        gradle wrapper
+        chmod +x gradlew
 
     - name: Build APK (Debug)
       run: ./gradlew assembleDebug
