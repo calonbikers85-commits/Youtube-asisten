@@ -29,11 +29,5 @@ jobs:
       run: |
         keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
 
-    - name: Build APK (Bypass Missing Files)
-      run: ./gradlew assembleDebug --no-daemon --no-configuration-cache --refresh-dependencies -Dorg.gradle.welcome-provider.enabled=false -Dksp.incremental=false -PgoogleServices.skip=true -Pandroid.enableNavigationArgsGenerators=false
-
-    - name: Upload APK to Artifacts (Tombol Download)
-      uses: actions/upload-artifact@v4
-      with:
-        name: Youtube-Asisten-APK
-        path: app/build/outputs/apk/debug/app-debug.apk
+    - name: Build APK (Force Repository Center)
+      run: ./gradlew assembleDebug --no-daemon --no-configuration-cache --refresh-dependencies -Dorg.gradle.welcome-provider.enabled=false -Dksp.incremental=false -PgoogleServices.skip=true -Pandroid.enableNavigationArgsGenerators=false --stacktrace
